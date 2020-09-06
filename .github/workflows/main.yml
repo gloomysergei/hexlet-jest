@@ -4,6 +4,9 @@
 #Copyleft (c) by Sergei Ykovlew 2020
 
 name: My-GitHubActions-Jest
+env:
+  APPLICATION_NAME    : "MyFlask" 
+  DEPLOY PACKAGE_NAME : "flask-deploy-ver-${{ githab.sha }}"
 
 on:
   push:
@@ -17,7 +20,12 @@ jobs:
     steps:
       - name: Print Hello Message in Testing
         run: echo "Hello World from Testing"
-
+      - name: Execure few comands
+        run: 
+          echo "Hello Message1"
+          echo "Hello Message2"
+          echo "Application name ${{ env.APPLICATION_NAME }}"
+          
   my_deploy:
     runs-on: ubuntu-latest
     needs: [my_testing]
@@ -25,4 +33,13 @@ jobs:
     steps:
       - name: Print Hello Message in Deploy
         run: echo "Hello World from Deploy job"
+        
+      - name: Printing Deployment package
+        run: echo "Deplyopackage name is ${{ env.DEPLOY PACKAGE_NAME}}" 
     
+
+
+
+
+
+
