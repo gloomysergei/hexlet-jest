@@ -6,7 +6,7 @@
 name: My-GitHubActions-Jest
 env:
   APPLICATION_NAME    : "MyFlask" 
-  DEPLOY PACKAGE_NAME : "flask-deploy-ver-${{ githab.sha }}"
+  DEPLOY PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
 
 on:
   push:
