@@ -1,0 +1,27 @@
+#------------------------------------------------------------------------------------
+# GitHub Actions Hexlet-jest
+#------------------------------------------------------------------------------------defaults:
+#Copyleft (c) by Sergei Ykovlew 2020
+
+name: My-GitHubActions-Jest
+
+on:
+  push:
+    branches:
+      - master
+        
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print Hello Message
+        run: echo "Hello World from Testing"
+
+  my_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print Hello Message
+        run: echo "Hello World from Deploy job"
+    
