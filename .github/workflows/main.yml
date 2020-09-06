@@ -6,7 +6,7 @@
 name: My-GitHubActions-Jest
 env:
   APPLICATION_NAME    : "MyFlask" 
-  DEPLOY PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
+  DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
         run: echo "Hello World from Deploy job"
         
       - name: Printing Deployment package
-        run: echo "Deplyopackage name is ${{ env.DEPLOY PACKAGE_NAME}}" 
+        run: echo "Deplyopackage name is ${{ env.DEPLOY_PACKAGE_NAME}}" 
     
 
 
