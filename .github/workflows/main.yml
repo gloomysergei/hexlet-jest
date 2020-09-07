@@ -4,9 +4,6 @@
 #Copyleft (c) by Sergei Ykovlew 2020
 
 name: My-GitHubActions-Jest
-env:
-  APPLICATION_NAME    : "MyFlask" 
-  DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
 
 on:
   push:
@@ -18,37 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Print Hello Message in Testing
-        run: echo "Hello World from Testing"
-        
-      - name: Execure few comands
-        run: 
-          echo "Hello Message1"
-          echo "Hello Message2"
-          echo "Application name ${{ env.APPLICATION_NAME }}"
-          
+      
       - name: Git clone my repo
         uses: actions/checkout@v1
           
-      - name: List current folder
-        run: ls -la
+      - name: passing of tests
+        run: npx jest
           
-  my_deploy:
-    runs-on: ubuntu-latest
-    needs: [my_testing]
-    
-    steps:
-      - name: Print Hello Message in Deploy
-        run: echo "Hello World from Deploy job"
-        
-      - name: Printing Deployment package
-        run: echo "Deplyopackage name is ${{ env.DEPLOY_PACKAGE_NAME}}" 
-      
-      - name: Lets test some packages if they are here 1
-        run: aws --version
-        
-      - name: Lets test some packages if they are here 2
-        run: zip
+
     
 
 
